@@ -10,7 +10,7 @@ Students are expected to:
 Student Info
 =======================
 
-* Name: *YourNameHere*
-* ID: *YourIdHere*
-* Group ID: *Your Group ID here*
+* Name: Tang Van Anh        
+* ID: BA12-007
+* Group ID: 8
 * Project Name: *Your Project Name here*
