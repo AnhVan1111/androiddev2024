@@ -17,7 +17,7 @@
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.326"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="390dp" />
+        tools:layout_editor_absoluteY="364dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
