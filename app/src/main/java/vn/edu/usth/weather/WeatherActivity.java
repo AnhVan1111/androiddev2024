@@ -11,13 +11,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class WeatherActivity extends AppCompatActivity {
     private static final String Tag = "WeatherActivity";
+    ForecastFragment forecastFragment = new ForecastFragment();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
 
-        ForecastFragment forecastFragment = new ForecastFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.container, forecastFragment).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.main, forecastFragment).commit();
         Log.i(Tag, "onCreate");
     }
 
