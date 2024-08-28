@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.ImageView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +63,17 @@ public class ForecastFragment extends Fragment {
             Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_forecast, container, false);
         view.setBackgroundColor(Color.parseColor("#2000FF00"));
+
+
+        TextView tvDay = view.findViewById(R.id.tv_day);
+        ImageView ivWeatherIcon = view.findViewById(R.id.iv_weather_icon);
+
+
+        String day = "Friday";
+        int weatherIconResId = R.drawable.cloudy_day;
+
+        tvDay.setText(day);
+        ivWeatherIcon.setImageResource(weatherIconResId);
         return view;
     }
 }
