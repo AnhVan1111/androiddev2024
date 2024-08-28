@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ImageView;
 
@@ -61,19 +62,23 @@ public class ForecastFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_forecast, container, false);
+        View view = new View(getContext());
         view.setBackgroundColor(Color.parseColor("#2000FF00"));
 
-
-        TextView tvDay = view.findViewById(R.id.tv_day);
-        ImageView ivWeatherIcon = view.findViewById(R.id.iv_weather_icon);
-
-
-        String day = "Friday";
-        int weatherIconResId = R.drawable.cloudy_day;
-
+        TextView tvDay = new TextView(getContext());
+        String day = "Thursday";
         tvDay.setText(day);
+
+        ImageView ivWeatherIcon = new ImageView(getContext());
+        int weatherIconResId = R.drawable.cloudy_day;
         ivWeatherIcon.setImageResource(weatherIconResId);
-        return view;
+
+        LinearLayout linearLayout = new LinearLayout(getContext());
+        linearLayout.setOrientation(LinearLayout.VERTICAL);
+        linearLayout.addView(tvDay);
+        linearLayout.addView(ivWeatherIcon);
+        linearLayout.addView(view);
+
+        return linearLayout;
     }
 }
