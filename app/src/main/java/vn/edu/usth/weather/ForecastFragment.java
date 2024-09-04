@@ -59,26 +59,21 @@ public class ForecastFragment extends Fragment {
         }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
-        View view = new View(getContext());
-        view.setBackgroundColor(Color.parseColor("#2000FF00"));
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//            Bundle savedInstanceState) {
+//        View view = new View(getContext());
+//        view.setBackgroundColor(Color.parseColor("#2000FF00"));
+//
+//        TextView tvDay = new TextView(getContext());
+//        String day = "Thursday";
+//        tvDay.setText(day);
 
-        TextView tvDay = new TextView(getContext());
-        String day = "Thursday";
-        tvDay.setText(day);
-
-        ImageView ivWeatherIcon = new ImageView(getContext());
-        int weatherIconResId = R.drawable.cloudy_day;
-        ivWeatherIcon.setImageResource(weatherIconResId);
-
-        LinearLayout linearLayout = new LinearLayout(getContext());
-        linearLayout.setOrientation(LinearLayout.VERTICAL);
-        linearLayout.addView(tvDay);
-        linearLayout.addView(ivWeatherIcon);
-        linearLayout.addView(view);
-
-        return linearLayout;
-    }
+//        LinearLayout linearLayout = new LinearLayout(getContext());
+//        linearLayout.setOrientation(LinearLayout.VERTICAL);
+//        linearLayout.addView(tvDay);
+//        linearLayout.addView(view);
+//
+//        return linearLayout;
+//    }
 }
