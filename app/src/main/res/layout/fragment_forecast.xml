@@ -32,7 +32,7 @@
 
         <LinearLayout
             android:layout_width="350dp"
-            android:layout_height="600dp"
+            android:layout_height="581dp"
             android:layout_margin="30dp"
             android:background="#AFBAEF"
             android:orientation="vertical">
@@ -191,7 +191,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/cloudy_day" />
+                        android:src="@drawable/partly_cloudy" />
 
                     <TextView
                         android:id="@+id/textViewWeather5"
@@ -224,7 +224,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/cloudy_day" />
+                        android:src="@drawable/partly_cloudy" />
 
                     <TextView
                         android:id="@+id/textViewWeather6"
@@ -257,7 +257,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/cloudy_day" />
+                        android:src="@drawable/thunderstorm" />
 
                     <TextView
                         android:id="@+id/textViewWeather7"
@@ -291,7 +291,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/cloudy_day" />
+                        android:src="@drawable/scattered_showers" />
 
                     <TextView
                         android:id="@+id/textViewWeather9"
@@ -324,7 +324,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/cloudy_day" />
+                        android:src="@drawable/rainy" />
 
                     <TextView
                         android:id="@+id/textViewWeather10"
@@ -357,7 +357,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/cloudy_day" />
+                        android:src="@drawable/scattered_showers" />
 
                     <TextView
                         android:id="@+id/textViewWeather8"
