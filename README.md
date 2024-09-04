@@ -12,5 +12,5 @@ Student Info
 
 * Name: Tang Van Anh        
 * ID: BA12-007
-* Group ID: 8
-* Project Name: *Your Project Name here*
+* Group ID: 7
+* Project Name: Wordpress client
