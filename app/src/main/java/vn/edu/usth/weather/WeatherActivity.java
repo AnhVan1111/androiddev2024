@@ -8,52 +8,63 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.FragmentTransaction;
 
 public class WeatherActivity extends AppCompatActivity {
-    private static final String Tag = "WeatherActivity";
-    ForecastFragment forecastFragment = new ForecastFragment();
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_forecast);
+        private static final String Tag = "WeatherActivity";
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_weather);
 
-        getSupportFragmentManager().beginTransaction().add(R.id.main1, forecastFragment).commit();
-        Log.i(Tag, "onCreate");
-    }
+            WeatherFragment weatherFragment = new WeatherFragment();
+            getSupportFragmentManager().findFragmentById(R.id.weatherFragment);
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.add(R.id.weatherFragment, weatherFragment);
+            transaction.commit();
 
-    @Override
-    protected void onStart(){
-        super.onStart();
-        Log.i(Tag,"Start");
+            ForecastFragment forecastFragment = new ForecastFragment();
+            getSupportFragmentManager().findFragmentById(R.id.forecastFragment);
+            FragmentTransaction transaction1 = getSupportFragmentManager().beginTransaction();
+            transaction1.add(R.id.forecastFragment, forecastFragment);
+            transaction1.commit();
 
-    }
+            Log.i(Tag, "onCreate");
+        }
 
-    @Override
-    protected void onResume(){
-        super.onResume();
-        Log.i(Tag,"Resume");
+        @Override
+        protected void onStart(){
+            super.onStart();
+            Log.i(Tag,"Start");
 
-    }
+        }
 
-    @Override
-    protected void onPause(){
-        super.onPause();
-        Log.i(Tag,"Pause");
+        @Override
+        protected void onResume(){
+            super.onResume();
+            Log.i(Tag,"Resume");
 
-    }
+        }
 
-    @Override
-    protected void onStop(){
-        Log.i(Tag,"Stop");
-        super.onStop();
+        @Override
+        protected void onPause(){
+            super.onPause();
+            Log.i(Tag,"Pause");
 
-    }
+        }
 
-    @Override
-    protected void onDestroy(){
-        super.onDestroy();
-        Log.i(Tag,"Destroy");
+        @Override
+        protected void onStop(){
+            Log.i(Tag,"Stop");
+            super.onStop();
 
-    }
+        }
+
+        @Override
+        protected void onDestroy(){
+            super.onDestroy();
+            Log.i(Tag,"Destroy");
+
+        }
 
 }

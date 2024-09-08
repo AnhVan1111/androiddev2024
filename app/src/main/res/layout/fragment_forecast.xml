@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main1"
+    android:id="@+id/forecastFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ForecastFragment">
@@ -16,25 +17,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="#354594"
-                android:text="USTH Weather"
-                android:textAlignment="viewStart"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:textSize="30sp"
-                android:gravity="center"
-                android:textStyle="bold"
-                tools:ignore="RtlCompat" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="581dp"
-            android:layout_margin="30dp"
-            android:background="#AFBAEF"
+            android:layout_width="355dp"
+            android:layout_height="600dp"
+            android:layout_gravity="center"
             android:orientation="vertical">
 
             <LinearLayout
