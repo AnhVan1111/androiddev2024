@@ -9,28 +9,30 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
 
 public class WeatherActivity extends AppCompatActivity {
-        private static final String Tag = "WeatherActivity";
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_weather);
+    private ViewPager viewPager;
 
-            WeatherFragment weatherFragment = new WeatherFragment();
-            getSupportFragmentManager().findFragmentById(R.id.weatherFragment);
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.add(R.id.weatherFragment, weatherFragment);
-            transaction.commit();
+    private static final String Tag = "WeatherActivity";
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_weather);
 
-            ForecastFragment forecastFragment = new ForecastFragment();
-            getSupportFragmentManager().findFragmentById(R.id.forecastFragment);
-            FragmentTransaction transaction1 = getSupportFragmentManager().beginTransaction();
-            transaction1.add(R.id.forecastFragment, forecastFragment);
-            transaction1.commit();
+        HomeFragmentPagerAdapter adapter = new HomeFragmentPagerAdapter(getSupportFragmentManager());
 
-            Log.i(Tag, "onCreate");
-        }
+
+        ViewPager pager = (ViewPager) findViewById(R.id.pager);
+        pager.setOffscreenPageLimit(3);
+        pager.setAdapter(adapter);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab);
+        tabLayout.setupWithViewPager(pager);
+
+        Log.i(Tag, "onCreate");
+    }
 
         @Override
         protected void onStart(){
