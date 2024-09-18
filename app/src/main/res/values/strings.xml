@@ -1,5 +1,19 @@
 <resources>
     <string name="app_name">USTHWeather</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mon">Thứ 2</string>
+    <string name="partly_cloudy_24c_31c">Partly Cloudy 24C-31C</string>
+    <string name="tue">Thứ 3</string>
+    <string name="showers_24c_30c">Showers 24C-30C</string>
+    <string name="wed">Thứ 4</string>
+    <string name="rain_22c_23c">Rain 22C-23C</string>
+    <string name="thu">Thứ 5</string>
+    <string name="scattered_showers_22c_27c">Scattered Showers 22C-27C</string>
+    <string name="fri">Thứ 6</string>
+    <string name="mostly_cloudy_22c_30c">Mostly Cloudy 22C-30C</string>
+    <string name="sat">Thứ 7</string>
+    <string name="scattered_thunderstorms_24c_27c">Scattered Thunderstorms 24C-27C</string>
+    <string name="showers_24c_26c">Showers 24C-26C</string>
+    <string name="scattered_thunderstorms_23c_27c">Scattered Thunderstorms 23C-27C</string>
+    <string name="sun">Chủ Nhật</string>
 </resources>
