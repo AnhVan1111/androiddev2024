@@ -14,7 +14,6 @@
         android:layout_width="360dp"
         android:layout_height="243dp"
         android:layout_centerHorizontal="true"
-        android:background="#B9E0BB"
         android:orientation="vertical">
 
         <ImageView
@@ -28,18 +27,31 @@
 
         <TextView
             android:id="@+id/city"
-            android:layout_width="50dp"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="10dp"
             android:text="Paris"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/temperature"
-            android:layout_width="70dp"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
+            android:layout_marginLeft="22dp"
+            android:paddingTop="20dp"
+            android:paddingStart="10dp"
             android:text="12C Cloudy"
             android:textSize="20sp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/frame1" />
+
     </RelativeLayout>
 </RelativeLayout>
