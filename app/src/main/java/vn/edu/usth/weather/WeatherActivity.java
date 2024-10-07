@@ -18,6 +18,10 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.appcompat.widget.Toolbar;
 
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -53,6 +57,8 @@ public class WeatherActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        extractFile();
+
         Log.i(Tag, "onCreate");
     }
     @Override
@@ -65,6 +71,7 @@ public class WeatherActivity extends AppCompatActivity {
         int id = item.getItemId();
         if (id == R.id.refresh_button) {
             Toast.makeText(this, "Refreshing", Toast.LENGTH_SHORT).show();
+            simulateNetworkRequest();
             return true;
         } else if (id == R.id.setting_button) {
             Intent intent = new Intent(this, PrefActivity.class);
@@ -74,7 +81,33 @@ public class WeatherActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void extractAndPlayMusic() {
+    final Handler handler = new Handler(Looper.getMainLooper()) {
+        @Override
+        public void handleMessage(Message msg) {
+            String content = msg.getData().getString("server_response");
+            Toast.makeText(WeatherActivity.this, content, Toast.LENGTH_SHORT).show();
+        }
+    };
+    private void simulateNetworkRequest() {
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(2000);
+                }
+                catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Bundle bundle = new Bundle();
+                bundle.putString("server_response", "some sample json here");
+                Message msg = new Message();
+                msg.setData(bundle);
+                handler.sendMessage(msg);
+            }
+        });
+        t.start();
+    }
+    private void extractFile() {
         File musicFile = new File(Environment.getExternalStorageDirectory(), "sample.mp3");
         if (!musicFile.exists()) {
             try {
@@ -100,41 +133,33 @@ public class WeatherActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-        @Override
-        protected void onStart(){
-            super.onStart();
-            Log.i(Tag,"Start");
-
+    @Override
+    protected void onStart(){
+        super.onStart();
+        Log.i(Tag,"Start");
+    }
+    @Override
+    protected void onResume(){
+        super.onResume();
+        Log.i(Tag,"Resume");
+    }
+    @Override
+    protected void onPause(){
+        super.onPause();
+        Log.i(Tag,"Pause");
+    }
+    @Override
+    protected void onStop(){
+        Log.i(Tag,"Stop");
+        super.onStop();
+    }
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
         }
-
-        @Override
-        protected void onResume(){
-            super.onResume();
-            Log.i(Tag,"Resume");
-
-        }
-
-        @Override
-        protected void onPause(){
-            super.onPause();
-            Log.i(Tag,"Pause");
-
-        }
-
-        @Override
-        protected void onStop(){
-            Log.i(Tag,"Stop");
-            super.onStop();
-
-        }
-
-        @Override
-        protected void onDestroy(){
-            super.onDestroy();
-            if (mediaPlayer != null) {
-                mediaPlayer.release();
-                mediaPlayer = null;
-            }
-            Log.i(Tag,"Destroy");
-        }
+        Log.i(Tag,"Destroy");
+    }
 }
